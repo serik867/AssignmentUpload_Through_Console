@@ -6,14 +6,13 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return render(request,'home.html',{'name':'Serdar'})
+    return render(request,'index.html')
 
 
 def login(request):
     username=request.POST['username']
-    password=request.POST['password']
     email=request.POST['email']
-
+    password=request.POST['password']
     if username=="Serdar" and password=="12345" and email=="serdar12345@gmail.com":
         return render(request,'login.html',{'username':username,'email':email})
     else:
